@@ -1,0 +1,30 @@
+{
+    "configurations": [{
+        "name": "(lldb) Attach",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "enter program name, for example ${workspaceFolder}/a.out",
+            "processId": "${command:pickProcess}",
+            "MIMode": "lldb"
+        },{
+            "name": "(lldb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [{
+                "name": "LDFLAGS",
+                "value": "-L/usr/local/opt/llvm/lib"
+            }, {
+                "name": "CPPFLAGS",
+                "value": "-I/usr/local/opt/llvm/include"
+            }],
+            "externalConsole": true,
+            "MIMode": "lldb",
+        
+        },
+    ],
+    "version": "4"
+}
